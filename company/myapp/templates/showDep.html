@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+        <br/>
+        <h1>Department List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Department name</th>
+                    <th scope="col">Employee</th> 
+                    
+                </tr>
+            </thead>
+            <tbody>
+
+        <tr>
+            <th scope="row">{{ department_List.DepId }}</th>
+            <th scope="row">{{ department_List.DepName }}</th>
+            <th scope="row">{% for emp in empNames %}
+                {{emp}}
+                {% endfor %}
+            </th>
+        </tr>
+        </tbody>
+        </table>
+{% endblock %}
+
+        <!-- <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Department name</th>
+                    <th scope="col">Employee</th> 
+                    
+                </tr>
+            </thead>
+            <tbody>
+                    {% for dep in department_List %}
+                    <tr>
+                        <th scope="row">{{ Dep.DepId }}</th>
+                        <td><a href="{% url 'show-dep' Dep.id %}">{{ Dep.DepName }}</a> </td>
+                        <th scope="row">{{ empNames }}</th>
+                    </tr>
+                    {% endfor %}   
+                </tbody>
+            </table> -->

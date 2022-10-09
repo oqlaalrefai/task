@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Department List</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Department name</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for Dep in department_List %}
+            <tr>
+                <th scope="row">{{ Dep.DepId }}</th>
+                <td><a href="{% url 'show-dep' Dep.DepId %}">{{ Dep.DepName }}</a> </td>
+                    
+            </tr>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock %}
