@@ -5,6 +5,9 @@ from .forms import EmployeeForm,DepartemntForm
 from django.http import HttpResponseRedirect
 
 # Create your views here.
+def home(request):
+   return render(request,'home.html', {})
+
 def all_employees(request):
     employee_list = Employee.objects.all()
     return render(request,'employeeList.html', {'employee_list':employee_list})
